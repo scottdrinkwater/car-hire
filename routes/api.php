@@ -14,3 +14,17 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+Route::prefix('v1')->group(function () {
+
+    Route::get('cars', [CarController::class, 'availableCars']);
+
+    Route::prefix('bookings')->group(function () {
+
+        Route::post('', [BookingController::class, 'store']);
+        Route::patch('', [BookingController::class, 'update']);
+        Route::delete('', [BookingController::class, 'destroy']);
+
+    });
+
+});
