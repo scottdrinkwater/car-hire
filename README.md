@@ -18,4 +18,7 @@ Run `docker-compose run app ./vendor/bin/phpunit`
 - More user friendly validation errors
 - Pipeline / CI / CD
 - Feature tests on controller
+- Unit tests on services
 - Caching on bookings (kept fresh using events) / cars
+- Validation of existing bookings needs work
+- Has potential to use ElasticSearch, but over-engineering at this point
