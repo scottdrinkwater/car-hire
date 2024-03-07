@@ -22,8 +22,8 @@ Route::prefix('v1')->group(function () {
     Route::prefix('bookings')->group(function () {
 
         Route::post('', [BookingController::class, 'store']);
-        Route::patch('', [BookingController::class, 'update']);
-        Route::delete('', [BookingController::class, 'destroy']);
+        Route::patch('/{booking}', [BookingController::class, 'update']);
+        Route::delete('/{booking}', [BookingController::class, 'destroy']);
 
     });
 
