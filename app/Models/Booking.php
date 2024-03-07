@@ -7,7 +7,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @param \DateTime $from_date
@@ -31,8 +31,9 @@ class Booking extends Model
         'to_date' => 'immutable_datetime:Y-m-d H:i:s',
     ];
 
-    public function car(): HasOne
+    public function car(): BelongsTo
     {
-        return $this->hasOne(Car::class);
+        return $this->belongsTo(Car::class);
+    }
     }
 }
