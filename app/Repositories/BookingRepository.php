@@ -60,7 +60,7 @@ class BookingRepository
             ->where('from_date', '<=', $toDate->format('Y-m-d H:i:s'))
             ->where('to_date', '>=', $fromDate->format('Y-m-d H:i:s'));
         if ($car !== null) {
-            $builder->where('car_id', '=', $car);
+            $builder->where('car_id', '=', $car->getKey());
         }
 
         return $builder;
