@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateBookingRequest;
+use App\Http\Requests\BookingRequest;
 use App\Http\Resources\BookingResource;
 use App\Models\Booking;
 use App\Models\Car;
 use App\Repositories\BookingRepository;
 use App\Services\AgePolicyService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class BookingController extends Controller
@@ -26,7 +25,7 @@ class BookingController extends Controller
         $this->agePolicyService = $agePolicyService;
     }
 
-    public function store(CreateBookingRequest $request)
+    public function store(BookingRequest $request)
     {
         $age = (int) $request->input('age');
         $carId = $request->input('car_id');
@@ -53,15 +52,15 @@ class BookingController extends Controller
         return BookingResource::make($booking);
     }
 
-    public function update(Request $request, Booking $booking)
+    public function update(BookingRequest $request, Booking $booking)
     {
         $requestedCar = Car::find($request->car_id);
 
         $age = (int) $request->input('age');
         $additionalCost = $this->agePolicyService->getAdditionCost($age);
 
-        $booking->date_from = $request->date_from;
-        $booking->date_to = $request->date_to;
+        $booking->from_date = $request->from_date;
+        $booking->to_date = $request->to_date;
         $booking->car_id = $requestedCar->getKey();
         $booking->cost = $requestedCar->cost + $additionalCost;
 
