@@ -6,7 +6,7 @@ namespace App\Repositories;
 
 use App\Models\AgePolicy;
 
-final class AgePolicyRepository
+class AgePolicyRepository
 {
     public function findAgePolicy(int $age): ?AgePolicy
     {

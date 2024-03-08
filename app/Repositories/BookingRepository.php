@@ -9,7 +9,7 @@ use App\Models\Car;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 
-final class BookingRepository
+class BookingRepository
 {
     public function findOverlapping(
         \DateTimeImmutable $fromDate, 
