@@ -6,7 +6,7 @@ namespace App\Services;
 
 use App\Repositories\AgePolicyRepository;
 
-class AgePolicyService
+final class AgePolicyService
 {
     private AgePolicyRepository $agePolicyRepository;
 

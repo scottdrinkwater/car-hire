@@ -7,7 +7,7 @@ namespace App\Repositories;
 use App\Models\Car;
 use Illuminate\Support\Collection;
 
-class CarRepository
+final class CarRepository
 {
     public function findNotInIds(Collection $ids): Collection
     {

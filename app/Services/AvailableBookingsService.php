@@ -11,7 +11,7 @@ use App\Repositories\CarRepository;
 use Illuminate\Support\Collection;
 
 
-class AvailableBookingsService
+final class AvailableBookingsService
 {
     private BookingRepository $bookingRepository;
     private CarRepository $carRepository;
