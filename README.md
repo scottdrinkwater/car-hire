@@ -63,12 +63,9 @@ Run `docker-compose run app bin/lint`
 Run `docker-compose run app ./vendor/bin/phpunit`
 
 ## If I had more time / other musings
-- Test coverage on booking CRUD endpoints
+- Feature tests on booking CRUD endpoints
 - OAUTH Authentication / User stored on booking
 - More user friendly validation errors
 - Pipeline / CI / CD
-- Feature tests on controller
-- Unit tests on services
 - Caching on bookings (kept fresh using events) / cars
-- Validation of existing bookings needs work
 - Has potential to use ElasticSearch, but over-engineering at this point
