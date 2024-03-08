@@ -7,16 +7,21 @@ namespace App\Services;
 use App\Models\Booking;
 use App\Models\Car;
 use App\Repositories\BookingRepository;
+use App\Repositories\CarRepository;
 use Illuminate\Support\Collection;
 
 
 class AvailableBookingsService
 {
     private BookingRepository $bookingRepository;
+    private CarRepository $carRepository;
 
-    public function __construct(BookingRepository $bookingRepository)
-    {
+    public function __construct(
+        BookingRepository $bookingRepository, 
+        CarRepository $carRepository
+    ) {
         $this->bookingRepository = $bookingRepository;
+        $this->carRepository = $carRepository;
     }
 
     /**
@@ -35,9 +40,7 @@ class AvailableBookingsService
         
         $bookedCarIds = $existingBookings->pluck('car_id');
         
-        $availableCars = Car::query()
-            ->whereNotIn('id', $bookedCarIds)
-            ->get();
+        $availableCars = $this->carRepository->findNotInIds($bookedCarIds);
 
         $availableBookings = $availableCars->map(fn (Car $car) => $this->getAvailableBooking($fromDate, $toDate, $car));
 
