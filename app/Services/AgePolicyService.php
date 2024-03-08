@@ -19,7 +19,7 @@ final class AgePolicyService
     /**
      * Get the additional cost to add onto the base cost based on the users age.
      * 
-     * @param int $age
+     * @param  int $age
      * @return float
      */
     public function getAdditionCost(int $age): float

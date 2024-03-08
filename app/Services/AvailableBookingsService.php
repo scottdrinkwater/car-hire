@@ -27,8 +27,8 @@ final class AvailableBookingsService
     /**
      * Get all available car bookings within a date range.
      * 
-     * @param \DateTimeImmutable $fromDate
-     * @param \DateTimeImmutable $toDate
+     * @param  \DateTimeImmutable $fromDate
+     * @param  \DateTimeImmutable $toDate
      * @return Collection<Booking>
      */
     public function getBookingsAvailableBetween(
@@ -50,9 +50,9 @@ final class AvailableBookingsService
     /**
      * Generate an available booking from the car that is available and the desired date range.
      * 
-     * @param \DateTimeImmutable $fromDate
-     * @param \DateTimeImmutable $toDate
-     * @param Car $car
+     * @param  \DateTimeImmutable $fromDate
+     * @param  \DateTimeImmutable $toDate
+     * @param  Car                $car
      * @return Booking
      */
     private function getAvailableBooking(
