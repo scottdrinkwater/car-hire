@@ -17,13 +17,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
 
-    Route::get('cars', [CarController::class, 'availableCars']);
+    Route::get('cars', [CarController::class, 'availableCars'])
+        ->name('available_cars');
 
     Route::prefix('bookings')->group(function () {
 
-        Route::post('', [BookingController::class, 'store']);
-        Route::patch('/{booking}', [BookingController::class, 'update']);
-        Route::delete('/{booking}', [BookingController::class, 'destroy']);
+        Route::post('', [BookingController::class, 'store'])
+            ->name('create_booking');
+        Route::patch('/{booking}', [BookingController::class, 'update'])
+            ->name('update_booking');
+        Route::delete('/{booking}', [BookingController::class, 'destroy'])
+            ->name('delete_booking');
 
     });
 
