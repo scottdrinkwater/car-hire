@@ -16,8 +16,20 @@ class AgePolicyFactory extends Factory
      */
     public function definition(): array
     {
+        $ageFrom = $this->faker->numberBetween(17, 120);
+        $ageTo = $ageFrom + 20;
+
         return [
-            //
+            // Should not be used for Factory::create, only Factory::make
+            'id' => $this->faker->unique()->numberBetween(0, PHP_INT_MAX),
+            'age_from' => $ageFrom,
+            'age_to' => $ageTo,
+            'registration' => $this->faker->text(7),
         ];
+    }
+
+    protected function withFaker()
+    {
+        return \Faker\Factory::create('en');
     }
 }
