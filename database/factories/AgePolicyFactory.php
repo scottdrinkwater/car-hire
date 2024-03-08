@@ -24,7 +24,6 @@ class AgePolicyFactory extends Factory
             'id' => $this->faker->unique()->numberBetween(0, PHP_INT_MAX),
             'age_from' => $ageFrom,
             'age_to' => $ageTo,
-            'registration' => $this->faker->text(7),
         ];
     }
 
