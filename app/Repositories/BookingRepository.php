@@ -7,7 +7,7 @@ namespace App\Repositories;
 use App\Models\Booking;
 use App\Models\Car;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection;
 
 class BookingRepository
 {
