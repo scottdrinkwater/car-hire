@@ -15,4 +15,8 @@ use Illuminate\Database\Eloquent\Model;
 class AgePolicy extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'additional_cost' => 'float',
+    ];
 }
