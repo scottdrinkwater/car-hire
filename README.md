@@ -61,7 +61,7 @@ Run `docker-compose run app bin/lint`
 Run `docker-compose run app ./vendor/bin/phpunit`
 
 ## If I had more time / other musings
-- TEST COVERAGE
+- Test coverage on booking CRUD endpoints
 - Docs (Swagger)
 - OAUTH Authentication / User stored on booking
 - More user friendly validation errors
