@@ -1,0 +1,193 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "789d4b57-18b0-4986-9557-74ab32db62e4",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Displays available cars.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/cars",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/cars"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"from_date\":\"2024-03-08T13:59:09\",\"to_date\":\"2024-03-08T13:59:09\",\"age\":12}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Peugeot\",\"registration\":\"PE96 UGE\",\"cost\":10},{\"id\":2,\"name\":\"Fiat\",\"registration\":\"FI57 ATT\",\"cost\":70},{\"id\":3,\"name\":\"Porsche\",\"registration\":\"PO21 RSC\",\"cost\":500}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/v1\/bookings",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/bookings",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/bookings"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"from_date\":\"2024-03-08T13:59:09\",\"to_date\":\"2024-03-08T13:59:09\",\"car_id\":5}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PATCH api\/v1\/bookings\/{booking_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/bookings\/:booking_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/bookings\/:booking_id",
+                            "variable": [
+                                {
+                                    "id": "booking_id",
+                                    "key": "booking_id",
+                                    "value": "2",
+                                    "description": "The ID of the booking."
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"from_date\":\"2024-03-08T13:59:09\",\"to_date\":\"2024-03-08T13:59:09\",\"car_id\":8}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/v1\/bookings\/{booking_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/bookings\/:booking_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/bookings\/:booking_id",
+                            "variable": [
+                                {
+                                    "id": "booking_id",
+                                    "key": "booking_id",
+                                    "value": "2",
+                                    "description": "The ID of the booking."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

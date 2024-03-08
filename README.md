@@ -6,6 +6,8 @@
 
 ## Endpoints
 
+You can view the API's in the browser by going to [http://localhost/docs](http://localhost/docs).
+
 ### Get cars available for hire
 
 ![Get available cars](image.png)

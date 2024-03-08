@@ -1,0 +1,187 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/cars:
+    get:
+      summary: 'Displays available cars.'
+      operationId: displaysAvailableCars
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: Peugeot
+                      registration: 'PE96 UGE'
+                      cost: 10
+                    -
+                      id: 2
+                      name: Fiat
+                      registration: 'FI57 ATT'
+                      cost: 70
+                    -
+                      id: 3
+                      name: Porsche
+                      registration: 'PO21 RSC'
+                      cost: 500
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: Peugeot
+                        registration: 'PE96 UGE'
+                        cost: 10
+                      -
+                        id: 2
+                        name: Fiat
+                        registration: 'FI57 ATT'
+                        cost: 70
+                      -
+                        id: 3
+                        name: Porsche
+                        registration: 'PO21 RSC'
+                        cost: 500
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: Peugeot
+                        registration:
+                          type: string
+                          example: 'PE96 UGE'
+                        cost:
+                          type: integer
+                          example: 10
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-03-08T13:59:09'
+                to_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-03-08T13:59:09'
+                age:
+                  type: integer
+                  description: ''
+                  example: 12
+              required:
+                - from_date
+                - to_date
+                - age
+      security: []
+  /api/v1/bookings:
+    post:
+      summary: ''
+      operationId: postApiV1Bookings
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-03-08T13:59:09'
+                to_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-03-08T13:59:09'
+                car_id:
+                  type: integer
+                  description: ''
+                  example: 5
+              required:
+                - from_date
+                - to_date
+                - car_id
+      security: []
+  '/api/v1/bookings/{booking_id}':
+    patch:
+      summary: ''
+      operationId: patchApiV1BookingsBooking_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-03-08T13:59:09'
+                to_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-03-08T13:59:09'
+                car_id:
+                  type: integer
+                  description: ''
+                  example: 8
+              required:
+                - from_date
+                - to_date
+                - car_id
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1BookingsBooking_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: booking_id
+        description: 'The ID of the booking.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''
